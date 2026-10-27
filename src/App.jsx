@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Directory from './components/Directory'
 import GuideCTA from './components/GuideCTA'
 import CompareBar from './components/CompareBar'
+import { ArrowUpRight } from './components/Icons'
 
 export default function App() {
   const [compareIds, setCompareIds] = useState(() => new Set())
@@ -42,6 +43,23 @@ export default function App() {
 
   return (
     <div id="top" className="min-h-screen bg-bg text-text">
+      <div className="border-b border-border/80 bg-bg-elevated">
+        <div className="mx-auto flex h-9 max-w-7xl items-center justify-center gap-2 px-5 text-[0.8rem] text-text-muted sm:justify-end sm:px-8">
+          <span>
+            Created by <span className="font-medium text-text">Hisham Al Mazrui</span>
+          </span>
+          <span className="text-text-dim">·</span>
+          <a
+            href="https://www.linkedin.com/in/hisham-almazrui/"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1 font-medium text-accent-soft transition hover:text-accent"
+          >
+            LinkedIn
+            <ArrowUpRight className="h-3 w-3" />
+          </a>
+        </div>
+      </div>
       <Header theme={theme} onToggleTheme={onToggleTheme} />
       <main>
         <Hero />
