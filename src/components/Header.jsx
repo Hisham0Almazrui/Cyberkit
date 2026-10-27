@@ -4,6 +4,7 @@ const nav = [
   { id: 'directory', label: 'Tool directory', href: '#directory' },
   { id: 'compare', label: 'Compare tools', href: '#directory' },
   { id: 'learning', label: 'Learning hub', href: '#guide' },
+  { id: 'certs', label: 'Certifications', href: '#certifications' },
 ]
 
 export default function Header({ active = 'directory', theme, onToggleTheme }) {

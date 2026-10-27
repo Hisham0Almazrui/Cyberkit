@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Directory from './components/Directory'
 import GuideCTA from './components/GuideCTA'
+import Certifications from './components/Certifications'
 import CompareBar from './components/CompareBar'
 import { ArrowUpRight } from './components/Icons'
 
@@ -64,6 +65,7 @@ export default function App() {
       <main>
         <Hero />
         <Directory compareIds={compareIds} onToggleCompare={onToggleCompare} />
+        <Certifications />
         <GuideCTA />
       </main>
 
