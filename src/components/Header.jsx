@@ -3,7 +3,7 @@ import { ShieldLogo, SunIcon, MoonIcon, ArrowUpRight } from './Icons'
 const nav = [
   { id: 'directory', label: 'Tool directory', href: '#directory' },
   { id: 'compare', label: 'Compare tools', href: '#directory' },
-  { id: 'learning', label: 'Learning hub', href: '#guide' },
+  { id: 'learning', label: 'Learning hub', href: '#learning-hub' },
   { id: 'certs', label: 'Certifications', href: '#certifications' },
 ]
 

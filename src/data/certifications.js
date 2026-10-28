@@ -1,4 +1,4 @@
-export const certLevels = ['All levels', 'Entry', 'Intermediate', 'Advanced']
+export const certLevels = ['All levels', 'Beginner', 'Intermediate', 'Advanced']
 
 export const certifications = [
   {
@@ -6,7 +6,7 @@ export const certifications = [
     short: 'Sec+',
     name: 'CompTIA Security+',
     issuer: 'CompTIA',
-    level: 'Entry',
+    level: 'Beginner',
     color: '#8a3a3a',
     focus: ['Fundamentals', 'Blue team'],
     description: 'A widely recognized baseline covering threats, architecture, operations, and security governance.',
@@ -17,7 +17,7 @@ export const certifications = [
     short: 'CC',
     name: 'Certified in Cybersecurity',
     issuer: 'ISC2',
-    level: 'Entry',
+    level: 'Beginner',
     color: '#2a5a6b',
     focus: ['Fundamentals', 'Career start'],
     description: 'An accessible first step into security principles, access control, network security, and operations.',
@@ -28,7 +28,7 @@ export const certifications = [
     short: 'eJPT',
     name: 'eLearnSecurity Junior Penetration Tester',
     issuer: 'INE Security',
-    level: 'Entry',
+    level: 'Beginner',
     color: '#3a6b4a',
     focus: ['Pentesting', 'Hands-on'],
     description: 'A practical, lab-based exam that validates core penetration testing and network assessment skills.',

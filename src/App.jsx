@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Directory from './components/Directory'
 import GuideCTA from './components/GuideCTA'
 import Certifications from './components/Certifications'
+import LearningHub from './components/LearningHub'
 import CompareBar from './components/CompareBar'
 import { ArrowUpRight } from './components/Icons'
 
@@ -66,6 +67,7 @@ export default function App() {
         <Hero />
         <Directory compareIds={compareIds} onToggleCompare={onToggleCompare} />
         <Certifications />
+        <LearningHub />
         <GuideCTA />
       </main>
 
