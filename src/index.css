@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-bg: #171113;
-  --color-bg-elevated: #201719;
-  --color-bg-card: #231a1e;
-  --color-bg-card-hover: #2b2025;
-  --color-border: #3a2c31;
-  --color-border-soft: #2c2226;
+  --color-bg: #261419;
+  --color-bg-elevated: #2e181e;
+  --color-bg-card: #321b21;
+  --color-bg-card-hover: #3b2128;
+  --color-border: #4b2e36;
+  --color-border-soft: #3b242a;
   --color-accent: #b84a5a;
   --color-accent-deep: #9d3144;
   --color-accent-soft: #c45a6a;
@@ -18,10 +18,10 @@
   --color-license-freemium: #c9b86a;
   --color-license-free: #c47a9a;
   --color-license-oss: #c47a9a;
-  --color-panel-from: #3d1a23;
-  --color-panel-to: #1f1417;
-  --color-promo-from: #4a1d28;
-  --color-promo-to: #221519;
+  --color-panel-from: #4a2029;
+  --color-panel-to: #2c171c;
+  --color-promo-from: #57232f;
+  --color-promo-to: #2e181e;
   --color-radar-line: #5a434a;
   --color-radar-core: #2e2228;
   --color-radar-core-border: #644c55;
@@ -65,8 +65,8 @@
 
 :root:not([data-theme='light']) body {
   background:
-    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(125, 21, 32, 0.38), transparent 70%),
-    linear-gradient(180deg, #24121a 0%, #171113 45%, #1d1014 100%);
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(150, 30, 45, 0.45), transparent 70%),
+    linear-gradient(180deg, #3a1821 0%, #261419 45%, #2e161c 100%);
   background-attachment: fixed;
 }
 
