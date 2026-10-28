@@ -18,10 +18,10 @@
   --color-license-freemium: #c9b86a;
   --color-license-free: #c47a9a;
   --color-license-oss: #c47a9a;
-  --color-panel-from: #2a1f24;
-  --color-panel-to: #221a1e;
-  --color-promo-from: #2f1f25;
-  --color-promo-to: #221a1e;
+  --color-panel-from: #3d1a23;
+  --color-panel-to: #1f1417;
+  --color-promo-from: #4a1d28;
+  --color-promo-to: #221519;
   --color-radar-line: #5a434a;
   --color-radar-core: #2e2228;
   --color-radar-core-border: #644c55;
@@ -61,6 +61,13 @@
 
 :root:not([data-theme='light']) {
   color-scheme: dark;
+}
+
+:root:not([data-theme='light']) body {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(125, 21, 32, 0.38), transparent 70%),
+    linear-gradient(180deg, #24121a 0%, #171113 45%, #1d1014 100%);
+  background-attachment: fixed;
 }
 
 * {

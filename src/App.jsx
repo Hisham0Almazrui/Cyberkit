@@ -43,7 +43,7 @@ export default function App() {
   const onClear = useCallback(() => setCompareIds(new Set()), [])
 
   return (
-    <div id="top" className="min-h-screen bg-bg text-text">
+    <div id="top" className="min-h-screen text-text">
       <div className="border-b border-border/80 bg-bg-elevated">
         <div className="mx-auto flex h-9 max-w-7xl items-center justify-center gap-2 px-5 text-[0.8rem] text-text-muted sm:justify-end sm:px-8">
           <span>
