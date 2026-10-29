@@ -158,10 +158,20 @@ export function C2Icon({ className = 'w-4 h-4' }) {
   )
 }
 
+export function ApiIcon({ className = 'w-4 h-4' }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" aria-hidden="true">
+      <path d="M8 8l-4 4 4 4M16 8l4 4-4 4" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M14 6l-4 12" strokeLinecap="round" />
+    </svg>
+  )
+}
+
 export const categoryIcons = {
   grid: GridIcon,
   network: NetworkIcon,
   web: WebIcon,
+  api: ApiIcon,
   cloud: CloudIcon,
   code: CodeIcon,
   endpoint: EndpointIcon,

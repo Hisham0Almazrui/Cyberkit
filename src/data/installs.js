@@ -65,6 +65,16 @@ export const installs = {
   havoc: { type: 'git', cmd: 'git clone https://github.com/HavocFramework/Havoc.git && cd Havoc && make' },
   empire: { type: 'apt', cmd: 'sudo apt install -y powershell-empire' },
   adaptix: { type: 'git', cmd: 'git clone https://github.com/Adaptix-Framework/AdaptixC2.git && cd AdaptixC2 && make' },
+
+  postman: { type: 'snap', cmd: 'sudo snap install postman' },
+  insomnia: { type: 'snap', cmd: 'sudo snap install insomnia' },
+  bruno: { type: 'download', cmd: 'Download the desktop app from usebruno.com, or: npm install -g @usebruno/cli' },
+  hoppscotch: { type: 'service', cmd: 'Web client at hoppscotch.io, or self-host: docker run --rm -p 3000:3000 hoppscotch/hoppscotch' },
+  httpie: { type: 'apt', cmd: 'sudo apt install -y httpie' },
+  jwttool: { type: 'pipx', cmd: 'pipx install git+https://github.com/ticarpi/jwt_tool.git' },
+  kiterunner: { type: 'go', cmd: 'go install github.com/assetnote/kiterunner/cmd/kr@latest' },
+  arjun: { type: 'pipx', cmd: 'pipx install arjun' },
+  restler: { type: 'git', cmd: 'git clone https://github.com/microsoft/restler-fuzzer.git && cd restler-fuzzer && python3 -m pip install -r requirements.txt' },
 }
 
 // Prerequisites to install once before the per-tool commands.
