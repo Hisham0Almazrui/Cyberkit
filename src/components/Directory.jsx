@@ -8,6 +8,7 @@ import {
   categoryIcons,
 } from './Icons'
 import ToolCard from './ToolCard'
+import { MAX_COMPARE } from './CompareBar'
 import { categories, licenses, tools, getCategoryCounts } from '../data/tools'
 
 export default function Directory({ compareIds, onToggleCompare }) {
@@ -174,6 +175,7 @@ export default function Directory({ compareIds, onToggleCompare }) {
                     key={tool.id}
                     tool={tool}
                     compared={compareIds.has(tool.id)}
+                    compareFull={!compareIds.has(tool.id) && compareIds.size >= MAX_COMPARE}
                     onToggleCompare={onToggleCompare}
                   />
                 ))}

@@ -5,11 +5,12 @@ import Directory from './components/Directory'
 import GuideCTA from './components/GuideCTA'
 import Certifications from './components/Certifications'
 import LearningHub from './components/LearningHub'
-import CompareBar from './components/CompareBar'
+import CompareBar, { MAX_COMPARE } from './components/CompareBar'
 import { ArrowUpRight } from './components/Icons'
 
 export default function App() {
   const [compareIds, setCompareIds] = useState(() => new Set())
+  const [compareOpen, setCompareOpen] = useState(false)
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'light')
 
   useEffect(() => {
@@ -26,7 +27,7 @@ export default function App() {
       const next = new Set(prev)
       if (next.has(id)) next.delete(id)
       else {
-        if (next.size >= 4) return prev
+        if (next.size >= MAX_COMPARE) return prev
         next.add(id)
       }
       return next
@@ -41,7 +42,16 @@ export default function App() {
     })
   }, [])
 
-  const onClear = useCallback(() => setCompareIds(new Set()), [])
+  const onClear = useCallback(() => {
+    setCompareIds(new Set())
+    setCompareOpen(false)
+  }, [])
+
+  const onOpenCompare = useCallback(() => {
+    if (compareIds.size >= 2) setCompareOpen(true)
+  }, [compareIds.size])
+
+  const onCloseCompare = useCallback(() => setCompareOpen(false), [])
 
   return (
     <div id="top" className="min-h-screen text-text">
@@ -62,7 +72,12 @@ export default function App() {
           </a>
         </div>
       </div>
-      <Header theme={theme} onToggleTheme={onToggleTheme} />
+      <Header
+        theme={theme}
+        onToggleTheme={onToggleTheme}
+        compareCount={compareIds.size}
+        onOpenCompare={onOpenCompare}
+      />
       <main>
         <Hero />
         <Directory compareIds={compareIds} onToggleCompare={onToggleCompare} />
@@ -84,7 +99,14 @@ export default function App() {
         </div>
       </footer>
 
-      <CompareBar compareIds={compareIds} onClear={onClear} onRemove={onRemove} />
+      <CompareBar
+        compareIds={compareIds}
+        open={compareOpen}
+        onOpen={onOpenCompare}
+        onClose={onCloseCompare}
+        onClear={onClear}
+        onRemove={onRemove}
+      />
     </div>
   )
 }

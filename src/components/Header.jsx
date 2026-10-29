@@ -2,12 +2,11 @@ import { ShieldLogo, SunIcon, MoonIcon, ArrowUpRight } from './Icons'
 
 const nav = [
   { id: 'directory', label: 'Tool directory', href: '#directory' },
-  { id: 'compare', label: 'Compare tools', href: '#directory' },
   { id: 'learning', label: 'Learning hub', href: '#learning-hub' },
   { id: 'certs', label: 'Certifications', href: '#certifications' },
 ]
 
-export default function Header({ active = 'directory', theme, onToggleTheme }) {
+export default function Header({ active = 'directory', theme, onToggleTheme, compareCount = 0, onOpenCompare }) {
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-bg/85 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-5 sm:px-8">
@@ -19,7 +18,33 @@ export default function Header({ active = 'directory', theme, onToggleTheme }) {
         </a>
 
         <nav className="hidden md:flex items-center gap-7">
-          {nav.map((item) => {
+          <a
+            href="#directory"
+            className={`relative text-[0.9rem] transition-colors ${
+              active === 'directory' ? 'text-text' : 'text-text-muted hover:text-text'
+            }`}
+          >
+            Tool directory
+            {active === 'directory' && (
+              <span className="absolute -bottom-[1.35rem] left-0 right-0 h-[2px] rounded-full bg-accent-deep" />
+            )}
+          </a>
+          <button
+            type="button"
+            onClick={() => {
+              if (compareCount >= 2) onOpenCompare?.()
+              else document.getElementById('directory')?.scrollIntoView({ behavior: 'smooth' })
+            }}
+            className="relative text-[0.9rem] text-text-muted transition-colors hover:text-text"
+          >
+            Compare tools
+            {compareCount > 0 && (
+              <span className="ml-1.5 inline-flex h-4 min-w-4 items-center justify-center rounded-full bg-accent-deep px-1 text-[0.65rem] font-semibold text-white">
+                {compareCount}
+              </span>
+            )}
+          </button>
+          {nav.filter((item) => item.id !== 'directory').map((item) => {
             const isActive = item.id === active
             return (
               <a

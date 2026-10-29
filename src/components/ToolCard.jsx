@@ -14,7 +14,7 @@ const licenseDot = {
   'Open source': 'bg-license-oss',
 }
 
-export default function ToolCard({ tool, compared, onToggleCompare }) {
+export default function ToolCard({ tool, compared, compareFull, onToggleCompare }) {
   return (
     <article className="group flex flex-col rounded-xl border border-border bg-bg-card p-5 transition duration-200 hover:border-accent-muted hover:bg-bg-card-hover">
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -75,13 +75,39 @@ export default function ToolCard({ tool, compared, onToggleCompare }) {
           View tool
           <ArrowRight className="w-3.5 h-3.5" />
         </a>
-        <label className="inline-flex cursor-pointer items-center gap-2 text-[0.8rem] text-text-dim select-none">
+        <label
+          title={compareFull ? 'You can compare up to 4 tools' : 'Add to comparison'}
+          className={`inline-flex items-center gap-2 text-[0.8rem] select-none ${
+            compareFull
+              ? 'cursor-not-allowed text-text-dim/50'
+              : compared
+                ? 'cursor-pointer text-accent-soft'
+                : 'cursor-pointer text-text-dim hover:text-text-muted'
+          }`}
+        >
           <input
             type="checkbox"
             checked={compared}
+            disabled={compareFull}
             onChange={() => onToggleCompare(tool.id)}
-            className="h-3.5 w-3.5 appearance-none rounded-[3px] border border-border bg-transparent checked:border-accent-deep checked:bg-accent-deep transition"
+            className="peer sr-only"
           />
+          <span
+            className={`flex h-4 w-4 items-center justify-center rounded-[4px] border transition ${
+              compared
+                ? 'border-accent-deep bg-accent-deep text-white'
+                : compareFull
+                  ? 'border-border'
+                  : 'border-border bg-transparent peer-focus-visible:ring-2 peer-focus-visible:ring-accent-muted'
+            }`}
+            aria-hidden="true"
+          >
+            {compared && (
+              <svg viewBox="0 0 12 12" className="h-3 w-3" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M2.5 6.5l2.2 2.2 5-5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            )}
+          </span>
           Compare
         </label>
       </div>
